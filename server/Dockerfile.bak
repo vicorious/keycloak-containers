@@ -21,6 +21,7 @@ RUN microdnf update -y && microdnf install -y glibc-langpack-en gzip hostname ja
 
 ADD tools /opt/jboss/tools
 RUN /opt/jboss/tools/build-keycloak.sh
+RUN /opt/jboss/tools/build-mobile-keycloak-java.sh
 
 USER 1000
 
