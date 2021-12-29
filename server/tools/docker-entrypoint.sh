@@ -249,12 +249,13 @@ if [ ! -e "$configured_file" ]; then
 fi
 
 ##################
-# Start Keycloak #
-##################
-exec /opt/jboss/keycloak/bin/standalone.sh $SYS_PROPS $@
-
-##################
 # Start KeyCloak Java #
 ##################
 exec /opt/jboss/keycloak/bin/jboss-cli.sh --connect --command="deploy --force /opt/jboss/mobile/target/keycloak-authenticator-1.0-SNAPSHOT.jar"
 exit $?
+##################
+# Start Keycloak #
+##################
+exec /opt/jboss/keycloak/bin/standalone.sh $SYS_PROPS $@
+
+
