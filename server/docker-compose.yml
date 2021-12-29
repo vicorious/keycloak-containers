@@ -13,6 +13,7 @@ services:
         MYSQL_USER: keycloak
         MYSQL_PASSWORD: password
   keycloak:
+      build: .
       image: jboss/keycloak-mobile-auth:latest
       environment:
         DB_VENDOR: MYSQL
